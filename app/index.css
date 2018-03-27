@@ -33,7 +33,6 @@ body {
 
 .city-state-form {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -77,4 +76,13 @@ body {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(252, 90, 44, 0.89);
+  color: #fff;
+  padding: 5px;
 }
