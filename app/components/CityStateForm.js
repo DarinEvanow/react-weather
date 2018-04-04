@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import getCurrentWeather from '../utils/api';
 
 class CityStateForm extends React.Component {
   static propTypes = {
@@ -19,7 +20,7 @@ class CityStateForm extends React.Component {
   handleSubmitCityState = (event) => {
     event.preventDefault();
 
-    console.log(this.state.cityAndState);
+    console.log(getCurrentWeather(this.state.cityAndState));
   }
 
   render () {
