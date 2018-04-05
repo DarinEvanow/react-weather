@@ -25,7 +25,7 @@ function handleError (error) {
   return null;
 }
 
-export default async function getCurrentWeather (city) {
+export async function getCurrentWeather (city) {
   let queryStringData = getQueryStringData(city);
   let url = prepUrl('weather', queryStringData);
 
@@ -34,4 +34,15 @@ export default async function getCurrentWeather (city) {
 
   const weatherJSON = await response.json();
   return weatherJSON;
+}
+
+export async function getForecast (city) {
+  let queryStringData = getQueryStringData(city);
+  let url = prepUrl('weather', queryStringData);
+
+  const response = await fetch(url)
+    .catch(handleError);
+
+  const forecastJSON = await response.json();
+  return forecastJSON;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import CityStateForm from './CityStateForm';
+import CityForm from './CityForm';
 
 export default function Nav () {
   return (
@@ -7,7 +7,7 @@ export default function Nav () {
       <h1>
         React Weather
       </h1>
-      <CityStateForm direction='row' />
+      <CityForm direction='row' />
     </div>
   )
 }
