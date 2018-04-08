@@ -6,18 +6,22 @@ import {
 } from 'react-router-dom';
 import Nav from '../components/Nav';
 import Home from '../components/Home';
+import Forecast from '../components/Forecast';
 
 class App extends React.Component {
   render() {
     return (
-      <div className='container'>
-        <div>
-          <Nav />
+      <Router>
+        <div className='container'>
+          <div>
+            <Nav />
+          </div>
+          <div className='home-container' style={{backgroundImage: "url('app/images/pattern.svg')"}}>
+            <Route exact path="/" component={Home} />
+            <Route path="/forecast" compononent={Forecast} />
+          </div>
         </div>
-        <div className='home-container' style={{backgroundImage: "url('app/images/pattern.svg')"}}>
-          <Home />
-        </div>
-      </div>
+      </Router>
     )
   }
 }
