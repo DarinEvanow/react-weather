@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getCurrentWeather, getForecast } from '../utils/api';
+import { Redirect } from 'react-router-dom'
 
 class CityForm extends React.Component {
   static propTypes = {
-    city: PropTypes.string.isRequired,
+    city: PropTypes.string,
   }
 
   state = {
     city: '',
+    forecast: null,
+    currentWeather: null
   }
 
   handleUpdateCity = (event) => {
@@ -17,15 +20,36 @@ class CityForm extends React.Component {
     this.setState(() => ({city: value}));
   }
 
-  handleSubmitCity = (event) => {
+  handleSubmitCity = async (event) => {
     event.preventDefault();
+    // get "getForecast"
+    const forecast = await getForecast(this.state.city)
+    //console.log(forecast)
+    // get "getCurrentWeather"
+    const currentWeather = await getCurrentWeather(this.state.city)
+    //console.log(currentWeather)
+    this.setState(() => ({
+      forecast,
+      currentWeather
+    }))
 
-    console.log(getCurrentWeather(this.state.city));
-    console.log(getForecast(this.state.city));
-    this.props.onSubmitCity(this.state.city);
+    // console.log(getCurrentWeather(this.state.city));
+    //console.log(getForecast(this.state.city));
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
   }
 
   render () {
+    if(this.state.forecast) {
+      const { forecast, currentWeather } = this.state
+      return <Redirect to={{
+        pathname: '/forecast',
+        search: `?city=${currentWeather.name}`,
+        state: {forecast, currentWeather}
+      }} />
+    }
     return (
       <div>
         <form className='city-form'
