@@ -1,6 +1,5 @@
 import React from 'react';
 import CityForm from './CityForm';
-import { withRouter } from 'react-router-dom';
 
 export default function Home ({ history }) {
   return (
@@ -14,7 +13,7 @@ export default function Home ({ history }) {
             search: `?city=${city}`
           });
         }}
-        />
+      />
     </div>
   )
 }

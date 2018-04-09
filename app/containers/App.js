@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
+  Switch,
   Route,
   Link,
 } from 'react-router-dom';
@@ -14,11 +15,13 @@ class App extends React.Component {
       <Router>
         <div className='container'>
           <div>
-            <Nav />
+            <Route path="/" component={Nav} />
           </div>
           <div className='home-container' style={{backgroundImage: "url('app/images/pattern.svg')"}}>
-            <Route exact path="/" component={Home} />
-            <Route path="/forecast" component={Forecast} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/forecast" component={Forecast} />
+            </Switch>
           </div>
         </div>
       </Router>
