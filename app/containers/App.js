@@ -18,7 +18,7 @@ class App extends React.Component {
           </div>
           <div className='home-container' style={{backgroundImage: "url('app/images/pattern.svg')"}}>
             <Route exact path="/" component={Home} />
-            <Route path="/forecast" compononent={Forecast} />
+            <Route path="/forecast" component={Forecast} />
           </div>
         </div>
       </Router>
