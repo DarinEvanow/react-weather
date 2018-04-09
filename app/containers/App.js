@@ -13,15 +13,12 @@ class App extends React.Component {
     return (
       <Router>
         <div className='container'>
-          <div>
-            <Nav />
-          </div>
+          <Route render={(props) => {
+            return <Nav {...props} />
+          }} />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/forecast" component={Forecast} />
-            <Route render={function () {
-              return <div>No match...</div>
-            }} />
           </Switch>
         </div>
       </Router>

@@ -10,8 +10,6 @@ class CityForm extends React.Component {
 
   state = {
     city: '',
-    forecast: null,
-    currentWeather: null
   }
 
   handleUpdateCity = (event) => {
@@ -20,36 +18,22 @@ class CityForm extends React.Component {
     this.setState(() => ({city: value}));
   }
 
-  handleSubmitCity = async (event) => {
+  handleSubmitCity = (event) => {
     event.preventDefault();
+    this.props.onSubmitCity(this.state.city)
     // get "getForecast"
-    const forecast = await getForecast(this.state.city)
+    // const forecast = await getForecast(this.state.city)
     //console.log(forecast)
     // get "getCurrentWeather"
-    const currentWeather = await getCurrentWeather(this.state.city)
+    // const currentWeather = await getCurrentWeather(this.state.city)
     //console.log(currentWeather)
-    this.setState(() => ({
-      forecast,
-      currentWeather
-    }))
-
-    // console.log(getCurrentWeather(this.state.city));
-    //console.log(getForecast(this.state.city));
-  }
-
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
+    // this.setState(() => ({
+    //   forecast,
+    //   currentWeather
+    // }))
   }
 
   render () {
-    if(this.state.forecast) {
-      const { forecast, currentWeather } = this.state
-      return <Redirect to={{
-        pathname: '/forecast',
-        search: `?city=${currentWeather.name}`,
-        state: {forecast, currentWeather}
-      }} />
-    }
     return (
       <div>
         <form className='city-form'
