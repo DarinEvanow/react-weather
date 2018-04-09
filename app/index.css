@@ -86,3 +86,9 @@ body {
   color: #fff;
   padding: 5px;
 }
+
+.nav-title a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}

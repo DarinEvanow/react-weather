@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getCurrentWeather, getForecast } from '../utils/api';
+import { Redirect } from 'react-router-dom'
 
 class CityForm extends React.Component {
   static propTypes = {
-    city: PropTypes.string.isRequired,
+    city: PropTypes.string,
   }
 
   state = {
@@ -19,9 +20,17 @@ class CityForm extends React.Component {
 
   handleSubmitCity = (event) => {
     event.preventDefault();
-
-    console.log(getCurrentWeather(this.state.city));
-    console.log(getForecast(this.state.city));
+    this.props.onSubmitCity(this.state.city)
+    // get "getForecast"
+    // const forecast = await getForecast(this.state.city)
+    //console.log(forecast)
+    // get "getCurrentWeather"
+    // const currentWeather = await getCurrentWeather(this.state.city)
+    //console.log(currentWeather)
+    // this.setState(() => ({
+    //   forecast,
+    //   currentWeather
+    // }))
   }
 
   render () {
