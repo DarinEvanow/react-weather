@@ -22,6 +22,7 @@ class CityForm extends React.Component {
 
     console.log(getCurrentWeather(this.state.city));
     console.log(getForecast(this.state.city));
+    this.props.onSubmitCity(this.state.city);
   }
 
   render () {
