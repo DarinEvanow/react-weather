@@ -2,11 +2,11 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
+  Switch
 } from 'react-router-dom';
 import Nav from '../components/Nav';
 import Home from '../components/Home';
-import Forecast from '../components/Forecast';
+import Forecast from '../components/Forecast'
 
 class App extends React.Component {
   render() {
@@ -16,10 +16,13 @@ class App extends React.Component {
           <div>
             <Nav />
           </div>
-          <div className='home-container' style={{backgroundImage: "url('app/images/pattern.svg')"}}>
-            <Route exact path="/" component={Home} />
-            <Route path="/forecast" compononent={Forecast} />
-          </div>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/forecast" component={Forecast} />
+            <Route render={function () {
+              return <div>No match...</div>
+            }} />
+          </Switch>
         </div>
       </Router>
     )

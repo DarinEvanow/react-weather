@@ -38,7 +38,7 @@ export async function getCurrentWeather (city) {
 
 export async function getForecast (city) {
   let queryStringData = getQueryStringData(city);
-  let url = prepUrl('weather', queryStringData);
+  let url = prepUrl('forecast/daily', queryStringData);
 
   const response = await fetch(url)
     .catch(handleError);
