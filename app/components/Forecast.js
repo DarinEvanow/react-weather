@@ -3,7 +3,7 @@ import { getForecast } from '../utils/api';
 import queryString from 'query-string';
 
 export default class Forecast extends Component {
-  state ={
+  state = {
     city: '',
     forecast: [],
     loading: true,
@@ -12,6 +12,11 @@ export default class Forecast extends Component {
   componentDidMount() {
     this.city = queryString.parse(this.props.location.search).city;
     this.makeRequest(this.city)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.city = queryString.parse(nextProps.location.search).city;
+    this.makeRequest(this.city);
   }
 
   makeRequest = (city) => {
