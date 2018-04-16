@@ -17,12 +17,10 @@ class App extends React.Component {
           <div>
             <Route path="/" component={Nav} />
           </div>
-          <div className='home-container' style={{backgroundImage: "url('app/images/pattern.svg')"}}>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/forecast" component={Forecast} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/forecast" component={Forecast} />
+          </Switch>
         </div>
       </Router>
     )

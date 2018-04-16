@@ -3,7 +3,7 @@ import CityForm from './CityForm';
 
 export default function Home ({ history }) {
   return (
-    <div className='home'>
+    <div  className='home-container' style={{backgroundImage: "url('app/images/pattern.svg')"}}>
       <h1 className='header'>Enter a City</h1>
       <CityForm
         direction='column'
