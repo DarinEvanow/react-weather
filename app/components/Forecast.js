@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { getForecast } from '../utils/api';
 import queryString from 'query-string';
+import { getForecast } from '../utils/api';
+import { getDate } from '../utils/helpers';
 
 function DayItem ({ day }) {
   const icon = day.weather[0].icon;
+  const date = getDate(day.dt);
   return (
-    <div>
-      <img src={`./app/images/weather-icons/${icon}.svg`} alt='Weather' />
-      <h2>{day.dt}</h2>
+    <div className='forecast-item'>
+      <img className='forecast-image' src={`./app/images/weather-icons/${icon}.svg`} alt='Weather' />
+      <h2 className='forecast-text'>{date}</h2>
     </div>
   )
 }

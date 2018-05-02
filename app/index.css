@@ -113,9 +113,15 @@ body {
 }
 
 .forecast-item {
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
   padding: 20px;
-  font-size: 150%;
+}
+
+.forecast-image {
+  display: block;
+  margin: auto;
+  height: 100px;
+}
+
+.forecast-text {
+  font-size: 20px;
 }
