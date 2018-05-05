@@ -15,7 +15,7 @@ body {
   width: 100%;
 }
 
-.home-container, .home {
+.home-container {
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -85,4 +85,43 @@ body {
   background: rgba(252, 90, 44, 0.89);
   color: #fff;
   padding: 5px;
+}
+
+.nav-title a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+.forecast-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: 200px 1fr;
+}
+
+.forecast-header {
+  text-align: center;
+  font-size: 45px;
+  color: #000;
+  font-weight: 100;
+}
+
+.forecast {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.forecast-item {
+  padding: 20px;
+}
+
+.forecast-image {
+  display: block;
+  margin: auto;
+  height: 100px;
+}
+
+.forecast-text {
+  font-size: 20px;
 }
