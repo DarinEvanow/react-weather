@@ -1,18 +1,7 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
+import DayItem from './DayItem';
 import { getForecast } from '../utils/api';
-import { getDate } from '../utils/helpers';
-
-function DayItem ({ day }) {
-  const icon = day.weather[0].icon;
-  const date = getDate(day.dt);
-  return (
-    <div className='forecast-item'>
-      <img className='forecast-image' src={`./app/images/weather-icons/${icon}.svg`} alt='Weather' />
-      <h2 className='forecast-text'>{date}</h2>
-    </div>
-  )
-}
 
 export default class Forecast extends Component {
   state = {
@@ -36,7 +25,14 @@ export default class Forecast extends Component {
     this.setState({ loading: true }, async () => {
       const forecast = await getForecast(city);
       this.setState(() => ({ city, forecastData: forecast.list, loading: false }));
-    })
+    });
+  }
+
+  handleClick = (city) => {
+    this.props.history.push({
+      pathname: `/details/${city}`,
+      state: city,
+    });
   }
 
   render() {
@@ -48,8 +44,7 @@ export default class Forecast extends Component {
               <h1 className='forecast-header'>{this.state.city}</h1>
               <div className='forecast'>
                 {this.state.forecastData.map((dayItem) => {
-                  console.log(dayItem);
-                  return <DayItem day={dayItem} />
+                  return <DayItem day={dayItem} onClick={() => this.handleClick(this.state.city)} />
                 })}
               </div>
             </div>
