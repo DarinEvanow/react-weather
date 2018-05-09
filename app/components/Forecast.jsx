@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
-import DayItem from './DayItem';
+import DayItem from './DayItem.jsx';
 import { getForecast } from '../utils/api';
 
 export default class Forecast extends Component {

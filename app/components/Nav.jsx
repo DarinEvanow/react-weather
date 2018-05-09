@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CityForm from './CityForm';
+import CityForm from './CityForm.jsx';
 
 export default function Nav ({ history }) {
   return (

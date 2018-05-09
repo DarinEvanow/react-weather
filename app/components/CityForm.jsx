@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class CityForm extends React.Component {
+export default class CityForm extends React.Component {
   static propTypes = {
     city: PropTypes.string.isRequired,
   }
@@ -40,5 +40,3 @@ class CityForm extends React.Component {
     )
   }
 }
-
-export default CityForm;

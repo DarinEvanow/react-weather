@@ -1,5 +1,5 @@
 import React from 'react';
-import CityForm from './CityForm';
+import CityForm from './CityForm.jsx';
 
 export default function Home ({ history }) {
   return (

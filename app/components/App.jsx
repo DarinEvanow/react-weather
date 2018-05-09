@@ -5,10 +5,10 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import Nav from '../components/Nav';
-import Home from '../components/Home';
-import Forecast from '../components/Forecast';
-import Detail from '../components/Detail';
+import Nav from '../components/Nav.jsx';
+import Home from '../components/Home.jsx';
+import Forecast from '../components/Forecast.jsx';
+import Detail from '../components/Detail.jsx';
 
 export default class App extends React.Component {
   render() {
