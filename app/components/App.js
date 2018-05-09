@@ -8,8 +8,9 @@ import {
 import Nav from '../components/Nav';
 import Home from '../components/Home';
 import Forecast from '../components/Forecast';
+import Detail from '../components/Detail';
 
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
       <Router>
@@ -20,11 +21,10 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/forecast" component={Forecast} />
+            <Route path="/details/:city" component={Detail} />
           </Switch>
         </div>
       </Router>
     )
   }
 }
-
-export default App;

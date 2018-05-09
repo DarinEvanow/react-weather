@@ -28,10 +28,10 @@ export default class Forecast extends Component {
     });
   }
 
-  handleClick = (city) => {
+  handleClick = (city, dayItem) => {
     this.props.history.push({
       pathname: `/details/${city}`,
-      state: city,
+      state: {city, dayItem},
     });
   }
 
@@ -44,7 +44,7 @@ export default class Forecast extends Component {
               <h1 className='forecast-header'>{this.state.city}</h1>
               <div className='forecast'>
                 {this.state.forecastData.map((dayItem) => {
-                  return <DayItem day={dayItem} onClick={() => this.handleClick(this.state.city)} />
+                  return <DayItem day={dayItem} onClick={() => this.handleClick(this.state.city, dayItem)} />
                 })}
               </div>
             </div>
