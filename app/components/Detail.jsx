@@ -1,5 +1,6 @@
 import React from 'react';
 import DayItem from './DayItem.jsx';
+import { convertTemp } from '../utils/helpers';
 
 export default class Detail extends React.Component {
   render() {
@@ -10,8 +11,8 @@ export default class Detail extends React.Component {
         <div className='detail-container'>
           <p>{city}</p>
           <p>{dayItem.weather[0].description}</p>
-          <p>min temp: {dayItem.temp.min} degrees</p>
-          <p>max temp: {dayItem.temp.max} degrees</p>
+          <p>max temp: {convertTemp(dayItem.temp.max)} degrees</p>
+          <p>min temp: {convertTemp(dayItem.temp.min)} degrees</p>
           <p>humidity: {dayItem.humidity}</p>
         </div>
       </div>

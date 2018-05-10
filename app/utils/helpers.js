@@ -29,3 +29,7 @@ export function getDate (unixTimestamp) {
   const month = monthsMap[date.getMonth()] + ' ' + date.getDate();
   return `${day}, ${month}`;
 }
+
+export function convertTemp (tempKelvin) {
+  return parseInt(((tempKelvin - 273.15) * 1.8000 + 32.00), 10)
+}
