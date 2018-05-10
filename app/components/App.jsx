@@ -5,11 +5,12 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import Nav from '../components/Nav';
-import Home from '../components/Home';
-import Forecast from '../components/Forecast';
+import Nav from '../components/Nav.jsx';
+import Home from '../components/Home.jsx';
+import Forecast from '../components/Forecast.jsx';
+import Detail from '../components/Detail.jsx';
 
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
       <Router>
@@ -20,11 +21,10 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/forecast" component={Forecast} />
+            <Route path="/details/:city" component={Detail} />
           </Switch>
         </div>
       </Router>
     )
   }
 }
-
-export default App;

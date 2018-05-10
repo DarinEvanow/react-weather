@@ -27,8 +27,8 @@ body {
 
 .header {
   font-size: 45px;
-  color: #000;
   font-weight: 100;
+  color: white;
 }
 
 .city-form {
@@ -89,6 +89,7 @@ body {
 
 .nav-title a {
   text-decoration: none;
+  font-weight: 100;
   cursor: pointer;
   color: white;
 }
@@ -100,20 +101,20 @@ body {
 }
 
 .forecast-header {
-  text-align: center;
   font-size: 45px;
-  color: #000;
   font-weight: 100;
+  text-align: center;
+  color: black;
 }
 
 .forecast {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .forecast-item {
-  padding: 20px;
+  padding-top: 20px;
 }
 
 .forecast-image {
@@ -123,5 +124,15 @@ body {
 }
 
 .forecast-text {
-  font-size: 20px;
+  font-size: 28px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.detail-container {
+  font-size: 25px;
+  font-weight: 100;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
 }
