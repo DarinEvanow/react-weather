@@ -25,10 +25,7 @@ const monthsMap = {
 
 export function getDate (unixTimestamp) {
   const date = new Date(unixTimestamp * 1000);
-  console.log('date', date);
   const day = daysMap[date.getDay()];
-  console.log('day', day);
   const month = monthsMap[date.getMonth()] + ' ' + date.getDate();
-  console.log('month', month);
   return `${day}, ${month}`;
 }

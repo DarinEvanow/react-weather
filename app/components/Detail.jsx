@@ -4,8 +4,6 @@ import DayItem from './DayItem.jsx';
 export default class Detail extends React.Component {
   render() {
     let { city, dayItem } = this.props.location.state;
-    console.log('city', city);
-    console.log('dayItem', dayItem);
     return (
       <div>
         <DayItem day={dayItem} />
